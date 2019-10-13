@@ -2,7 +2,11 @@
 
 add_library(QcTPC)
 
-target_sources(QcTPC PRIVATE src/PID.cxx)
+target_sources(QcTPC
+              PRIVATE src/PID.cxx)
+
+target_sources(QcTPC
+              PRIVATE src/BER.cxx)
 
 target_include_directories(
   QcTPC
@@ -20,8 +24,11 @@ install(TARGETS QcTPC
 
 add_root_dictionary(QcTPC
                     HEADERS include/TPC/PID.h
+                    HEADERS include/TPC/BER.h
                     LINKDEF include/TPC/LinkDef.h
                     BASENAME QcTPC)
+
+
 
 # ---- Test(s) ----
 
